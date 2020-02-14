@@ -1,0 +1,81 @@
+# ===================================================================
+# Spring Boot configuration for the "dev" profile.
+#
+# This configuration overrides the application.yml file.
+#
+# More information on profiles: https://www.jhipster.tech/profiles/
+# More information on configuration properties: https://www.jhipster.tech/common-application-properties/
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+logging:
+  level:
+    ROOT: ${LOG_LEVEL:INFO}
+
+spring:
+  profiles:
+    active: ${ACTIVE_PROFILE:dev}
+  jackson:
+    serialization:
+      indent-output: true
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: ${DATASOURCE_URL}
+    username: ${DATASOURCE_USERNAME:user}
+    password: ${DATASOURCE_PASSWORD}
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+  jpa:
+    database-platform: ${DATABASE_DIALECT}
+    database: ${DATABASE}
+    properties:
+      hibernate.id.new_generator_mappings: true
+      hibernate.connection.provider_disables_autocommit: true
+      hibernate.cache.use_second_level_cache: true
+      hibernate.cache.use_query_cache: false
+      hibernate.generate_statistics: true
+  liquibase:
+    contexts: ${ACTIVE_PROFILE:dev}
+  mail:
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    protocol: ${MAIL_PROTOCOL:smtp}
+    tls: ${MAIL_TLS:true}
+    properties.mail.smtp:
+      auth: ${MAIL_SMTP_AUTH:true}
+      starttls.enable: ${MAIL_SMTP_TLS:true}
+      ssl.trust: ${MAIL_SMTP_SSL_TRUST}
+  messages:
+    cache-duration: PT1S # 1 second, see the ISO 8601 standard
+
+server:
+  port: ${SERVER_PORT:8080}
+
+---
+
+spring:
+  profiles: dev
+  h2:
+    console:
+      enabled: true
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:h2:file:./target/h2db/db/database;DB_CLOSE_DELAY=-1
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    database: H2
+    show-sql: true
+  mail:
+    host: localhost
+    port: 25
+    username:
+    password:
