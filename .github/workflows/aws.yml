@@ -85,5 +85,5 @@ jobs:
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
         service: aws1-container-service
-        cluster: default
+        cluster: aws-devel
         wait-for-service-stability: true
