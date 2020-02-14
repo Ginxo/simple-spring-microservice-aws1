@@ -1,4 +1,4 @@
-package mingorance.cano.simplespringmicroserviceaws1.service.query;
+package mingorance.cano.simplespringmicroserviceaws1.resource.service.query;
 
 import java.util.Collection;
 import java.util.Set;

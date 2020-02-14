@@ -12,7 +12,7 @@ import mingorance.cano.simplespringmicroserviceaws1.resource.util.HeaderUtil;
 import mingorance.cano.simplespringmicroserviceaws1.resource.util.PaginationUtil;
 import mingorance.cano.simplespringmicroserviceaws1.resource.util.ResponseUtil;
 import mingorance.cano.simplespringmicroserviceaws1.service.UserService;
-import mingorance.cano.simplespringmicroserviceaws1.service.query.UserQueryService;
+import mingorance.cano.simplespringmicroserviceaws1.resource.service.query.UserQueryService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
