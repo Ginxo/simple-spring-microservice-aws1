@@ -8,12 +8,12 @@
         "logDriver": "awslogs",
         "secretOptions": null,
         "options": {
-          "awslogs-group": "/ecs/aws1-task-definition",
+          "awslogs-group": "/ecs/first-run-task-definition",
           "awslogs-region": "eu-west-1",
           "awslogs-stream-prefix": "ecs"
         }
       },
-      "entryPoint": null,
+      "entryPoint": [],
       "portMappings": [
         {
           "hostPort": 8080,
@@ -21,7 +21,7 @@
           "containerPort": 8080
         }
       ],
-      "command": null,
+      "command": [],
       "linuxParameters": null,
       "cpu": 0,
       "environment": [
@@ -49,7 +49,7 @@
       "interactive": null,
       "healthCheck": null,
       "essential": true,
-      "links": null,
+      "links": [],
       "hostname": null,
       "extraHosts": null,
       "pseudoTerminal": null,
@@ -58,18 +58,18 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "aws1"
+      "name": "aws1-container"
     }
   ],
   "placementConstraints": [],
-  "memory": "1024",
+  "memory": "512",
   "taskRoleArn": null,
   "compatibilities": [
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:eu-west-1:525334852292:task-definition/aws1-task-definition:4",
-  "family": "aws1-task-definition",
+  "taskDefinitionArn": "arn:aws:ecs:eu-west-1:525334852292:task-definition/first-run-task-definition:1",
+  "family": "first-run-task-definition",
   "requiresAttributes": [
     {
       "targetId": null,
@@ -126,7 +126,7 @@
   ],
   "networkMode": "awsvpc",
   "cpu": "256",
-  "revision": 4,
+  "revision": 1,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
