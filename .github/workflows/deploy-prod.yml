@@ -61,7 +61,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: devel-repository
+        ECR_REPOSITORY: prod
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and
@@ -75,7 +75,7 @@ jobs:
       id: task-def
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
-        task-definition: aws1-task-definition.json
+        task-definition: prod-task-definition.json
         container-name: aws1-container
         image: ${{ steps.build-image.outputs.image }}
 
