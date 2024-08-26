@@ -21,7 +21,7 @@
     <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
     <jacoco-maven-plugin.version>0.8.2</jacoco-maven-plugin.version>
     <zalando.problem-spring-web.version>0.25.2</zalando.problem-spring-web.version>
-    <swagger2.version>2.9.2</swagger2.version>
+    <swagger2.version>2.10.0</swagger2.version>
   </properties>
 
   <dependencies>
